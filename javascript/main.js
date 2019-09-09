@@ -15,7 +15,6 @@ function fetchData() {
 function buildShowcase(arr) {
     let bookcase = document.getElementById("bookcase");
     bookcase.innerHTML = "";
-    let rowHeight = 0;
     let coverHeight = 0;
 
     for (let i = 0; i < arr.length; i++) {
@@ -69,15 +68,15 @@ function filterBooks() {
 }
 
 
-
-
-
 //FINAL EXECUTION
 function pageExecution() {
-    console.log("executing!");
     buildShowcase(data);
     document.getElementById("search-field").addEventListener("keyup", filterBooks);
     window.addEventListener("resize", filterBooks);
+    setTimeout(function () { //needed for correct displaying at first paage load
+        buildShowcase(data);
+    }, 100);
+
 }
 
 fetchData();
