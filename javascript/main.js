@@ -54,16 +54,14 @@ function buildShowcase(arr) {
         // (this avoids rows overlapping with each other)
         coverHeight = cardFront.querySelector(".img-fluid").height; //GOOD
         card.querySelector(".flip-card-inner").style.height = coverHeight + "px"; //GOOD
-        //card.querySelector(".flip-card-back").style.height = coverHeight + "px";
-        //card.querySelector(".flip-card-front").style.height = coverHeight + "px";
     }
 }
 
 function filterBooks() {
     console.log("Input value is: ")
     console.log(document.getElementById("search-field").value);
-    let searchInput = document.getElementById("search-field").value;
-    displayedData = data.filter(x => x.title.includes(searchInput) || x.description.includes(searchInput));
+    let searchInput = document.getElementById("search-field").value.toLowerCase();
+    displayedData = data.filter(x => x.title.toLowerCase().includes(searchInput) || x.description.toLowerCase().includes(searchInput));
     buildShowcase(displayedData);
 }
 
