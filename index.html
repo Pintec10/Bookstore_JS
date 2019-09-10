@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- FANCYBOX -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-    <link>
+
 
     <!-- CUSTOM STYLESHEET -->
     <link rel="stylesheet" href="./styles/library_style.css">
@@ -18,7 +18,7 @@
 
 <body>
     <!-- HEADER -->
-    <div class="container">
+    <div class="container" id="app">
         <header class="d-flex justify-content-between align-content-center">
             <div>
                 <img src="images/library_logo.png" alt="TGIF logo" class="cstm-logo mr-3">
@@ -29,7 +29,7 @@
                         <div class="input-group-prepend"><label for="search-field" class="input-group-text">Search:
                             </label>
                         </div>
-                        <input id="search-field" type="text" class="form-control">
+                        <input v-model="searchInput" id="search-field" type="text" class="form-control">
                     </form>
                 </div>
             </div>
@@ -39,8 +39,28 @@
 
         <!-- CONTENT-->
         <div id="bookcase" class="d-flex flex-wrap align-items-center justify-content-center mt-4">
-
+            <div v-for="book in filterBooks" class="flip-card">
+                <div class="flip-card-inner">
+                    <!--<div v-bind:style="{height: findCoverHeight}" class="flip-card-inner">-->
+                    <div class="flip-card-front">
+                        <img v-bind:src="book.cover" class="img-fluid" alt="book cover">
+                    </div>
+                    <div class="flip-card-back d-flex flex-column justify-content-between p-3 overflow-auto">
+                        <h2>{{book.title}}</h2>
+                        <p>{{book.description}}</p>
+                        <a v-bind:href="book.detail" v-bind:data-caption="book.title" data-fancybox="gallery">
+                            <button class="button-style bg-danger text-white rounded">more info</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- TEST AREA 
+            <div>
+            <p id="testID">Ciao</p>
+            <h2>{{testCompute}}</h2>
+        </div>-->
     </div>
 
 
@@ -54,6 +74,8 @@
     <!-- FANCYBOX -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <!-- VUE (development version) -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- JAVASCRIPT -->
     <script src="./javascript/main.js"></script>
 
