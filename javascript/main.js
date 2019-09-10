@@ -1,3 +1,5 @@
+//branching to Vue
+
 var data = [];
 
 
@@ -60,8 +62,8 @@ function buildShowcase(arr) {
 function filterBooks() {
     console.log("Input value is: ")
     console.log(document.getElementById("search-field").value);
-    let searchInput = document.getElementById("search-field").value.toLowerCase();
-    displayedData = data.filter(x => x.title.toLowerCase().includes(searchInput) || x.description.toLowerCase().includes(searchInput));
+    let searchInput = document.getElementById("search-field").value.toLowperCase();
+    displayedData = data.filter(x => x.title.toLowperCase().includes(searchInput) || x.description.toLowperCase().includes(searchInput));
     buildShowcase(displayedData);
 }
 
