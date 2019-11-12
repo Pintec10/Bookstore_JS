@@ -1,3 +1,5 @@
+// VUE CDN VERSION
+
 var app = new Vue({
     el: "#app",
 
@@ -15,7 +17,7 @@ var app = new Vue({
             }).then(function () {
                 setTimeout(function () { //needed for correct displaying at first page load
                     app.assignHeight();
-                }, 350);
+                }, 500);
                 window.addEventListener("resize", app.assignHeight);
                 document.getElementById("search-field").addEventListener("keyup", app.assignHeight);
             });
