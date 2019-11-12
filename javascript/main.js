@@ -52,8 +52,8 @@ function buildShowcase(arr) {
 
         // giving "flip-card-inner" a height equal to the one that the image has inside the flexbox
         // (this avoids rows overlapping with each other)
-        coverHeight = cardFront.querySelector(".img-fluid").height; //GOOD
-        card.querySelector(".flip-card-inner").style.height = coverHeight + "px"; //GOOD
+        coverHeight = cardFront.querySelector(".img-fluid").height;
+        card.querySelector(".flip-card-inner").style.height = coverHeight + "px";
     }
 }
 
@@ -71,9 +71,9 @@ function pageExecution() {
     buildShowcase(data);
     document.getElementById("search-field").addEventListener("keyup", filterBooks);
     window.addEventListener("resize", filterBooks);
-    setTimeout(function () { //needed for correct displaying at first paage load
+    setTimeout(function () { //needed for correct displaying at first page load
         buildShowcase(data);
-    }, 100);
+    }, 400);
 
 }
 
