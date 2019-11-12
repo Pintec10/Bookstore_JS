@@ -1,12 +1,16 @@
 h2 {font-size:calc(10px + 1.5vw);}
 p, .input-group-text, .form-control {
   font-size: calc(6px + 1vw);
-line-height: calc(6px + 1.1vw)}
-button {font-size:calc(5px + 0.8vw);}
+  line-height: calc(6px + 1.1vw)}
+  button {font-size:calc(5px + 0.8vw);}
 
 
 .cstm-logo {
     max-width: 50vw;
+}
+
+.button-style {
+  width: 70%;
 }
 
 
@@ -14,14 +18,11 @@ button {font-size:calc(5px + 0.8vw);}
 .flip-card {
     background-color: transparent;
     width: 29%;
-    /*height: 400px;*/ /*later remove*/
     perspective: 1000px;
   }
 
   .flip-card-inner {
     position: relative;
-    width: 100%; /*later remove*/
-    height: 100%; /*later remove*/
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
@@ -50,8 +51,5 @@ button {font-size:calc(5px + 0.8vw);}
   }
 
 
-.button-style {
-    width: 70%;
-}
 
 

@@ -15,7 +15,7 @@ var app = new Vue({
             }).then(function () {
                 setTimeout(function () { //needed for correct displaying at first page load
                     app.assignHeight();
-                }, 150);
+                }, 350);
                 window.addEventListener("resize", app.assignHeight);
                 document.getElementById("search-field").addEventListener("keyup", app.assignHeight);
             });
