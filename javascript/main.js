@@ -77,6 +77,9 @@ function pageExecution() {
     setTimeout(function () { //ensures correct displaying at first page load, if really slow
         buildShowcase(data);
     }, 2000);
+    setTimeout(function () { //ensures correct displaying at first page load, if awfully slow
+        buildShowcase(data);
+    }, 4000);
 
 }
 
