@@ -73,7 +73,10 @@ function pageExecution() {
     window.addEventListener("resize", filterBooks);
     setTimeout(function () { //needed for correct displaying at first page load
         buildShowcase(data);
-    }, 400);
+    }, 500);
+    setTimeout(function () { //ensures correct displaying at first page load, if really slow
+        buildShowcase(data);
+    }, 2000);
 
 }
 
